@@ -1,12 +1,12 @@
 using System.Text.Json;
 using AutoMapper;
+using IFSPStore.Domain.Base;
 using IFSPStore.Repository.Context;
 using IFSPStore.Repository.Repository;
 using IFSPStore.Service.Services;
 using IFSPStore.Service.Validators;
 using IFStore.Domain.Base;
 using IFStore.Domain.Entities;
-using IFStore.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 

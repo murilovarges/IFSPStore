@@ -1,4 +1,5 @@
 ﻿using IFSPStore.App.Base;
+using IFSPStore.Domain.Base;
 using IFSPStore.Service.Validators;
 using IFStore.Domain.Base;
 using IFStore.Domain.Entities;
@@ -36,7 +37,7 @@ namespace IFSPStore.App.Cadastros
                     {
                         var usuario = _usuarioService.GetById<Usuario>(id);
                         PreencheObjeto(usuario);
-                        _usuarioService.Update<Usuario, Usuario, UsuarioValidator>(usuario);
+                        usuario = _usuarioService.Update<Usuario, Usuario, UsuarioValidator>(usuario);
                     }
                 }
                 else

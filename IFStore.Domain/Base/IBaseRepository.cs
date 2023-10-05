@@ -1,6 +1,6 @@
 ﻿using IFStore.Domain.Base;
 
-namespace IFStore.Domain.Interfaces
+namespace IFSPStore.Domain.Base
 {
     public interface IBaseRepository<TEntity> where TEntity : IBaseEntity
     {

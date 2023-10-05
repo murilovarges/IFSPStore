@@ -1,6 +1,6 @@
-﻿using IFStore.Domain.Interfaces;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
+using IFSPStore.Domain.Base;
 using IFStore.Domain.Base;
 
 namespace IFSPStore.Service.Services

@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
+using IFStore.Domain.Base;
 
-namespace IFStore.Domain.Base
+namespace IFSPStore.Domain.Base
 {
     public interface IBaseService<TEntity> where TEntity : IBaseEntity
     {

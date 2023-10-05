@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using IFSPStore.App.Cadastros;
+using IFSPStore.Domain.Base;
 using IFSPStore.Repository.Context;
 using IFSPStore.Repository.Repository;
 using IFSPStore.Service.Services;
 using IFStore.Domain.Base;
 using IFStore.Domain.Entities;
-using IFStore.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -63,7 +63,7 @@ namespace IFSPStore.App.Infra
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
-                {
+            {
                     config.CreateMap<Usuario, Usuario>();
                     config.CreateMap<Cidade, Cidade>();
                     config.CreateMap<Cliente, Cliente>();
@@ -73,7 +73,7 @@ namespace IFSPStore.App.Infra
                     config.CreateMap<VendaItem, VendaItem>();
 
                 }).CreateMapper());
-
+            
             ServicesProvider = Services.BuildServiceProvider();
         }
     }

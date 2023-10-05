@@ -1,6 +1,6 @@
-﻿using IFSPStore.Repository.Context;
+﻿using IFSPStore.Domain.Base;
+using IFSPStore.Repository.Context;
 using IFStore.Domain.Base;
-using IFStore.Domain.Interfaces;
 
 namespace IFSPStore.Repository.Repository
 {
