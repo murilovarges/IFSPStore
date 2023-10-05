@@ -33,6 +33,6 @@ namespace IFSPStore.Repository.Repository
 
         public IList<TEntity> Select() => _mySqlContext.Set<TEntity>().ToList();
       
-        public TEntity Select(object id) => _mySqlContext.Set<TEntity>().Find(id);
+        public TEntity Select(object id) => _mySqlContext.Set<TEntity>().Find(id)!;
     }
 }

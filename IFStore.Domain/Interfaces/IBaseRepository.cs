@@ -1,5 +1,4 @@
 ﻿using IFStore.Domain.Base;
-using System.Security.Cryptography;
 
 namespace IFStore.Domain.Interfaces
 {

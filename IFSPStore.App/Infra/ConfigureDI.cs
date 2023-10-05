@@ -12,11 +12,11 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace IFSPStore.App.Infra
 {
-    public static class ConfigureDBContext
+    public static class ConfigureDI
     {
-        public static ServiceCollection Services;
+        public static ServiceCollection? Services;
 
-        public static  ServiceProvider ServicesProvider;
+        public static  ServiceProvider? ServicesProvider;
 
 
         public static void ConfiguraServices()
@@ -24,17 +24,22 @@ namespace IFSPStore.App.Infra
             Services = new ServiceCollection();
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var server = "localhost";
-                var port = "3306";
-                var database = "IFSPStore";
-                var username = "root";
-                var password = "1122";
-                var strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
+                const string server = "localhost";
+                const string port = "3306";
+                const string database = "IFSPStore";
+                const string username = "root";
+                const string password = "1122";
+                const string strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
+                
+                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                options.EnableSensitiveDataLogging();
+
 
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>
                 {
                     opt.CommandTimeout(180);
                     opt.EnableRetryOnFailure(5);
+                    
                 });
             });
 
@@ -53,8 +58,7 @@ namespace IFSPStore.App.Infra
             Services.AddScoped<IBaseService<Grupo>, BaseService<Grupo>>();
             Services.AddScoped<IBaseService<Produto>, BaseService<Produto>>();
             Services.AddScoped<IBaseService<Venda>, BaseService<Venda>>();
-
-
+            
             Services.AddScoped<CadastroUsuarios, CadastroUsuarios>();
 
             // Mapping

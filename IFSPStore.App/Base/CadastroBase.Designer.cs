@@ -105,6 +105,7 @@
             btnCancelar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnCancelar.UseAccentColor = false;
             btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnSalvar
             // 
@@ -126,6 +127,7 @@
             btnSalvar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnSalvar.UseAccentColor = false;
             btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // tabPageConsulta
             // 
@@ -141,6 +143,7 @@
             tabPageConsulta.TabIndex = 1;
             tabPageConsulta.Text = "Consulta";
             tabPageConsulta.UseVisualStyleBackColor = true;
+            tabPageConsulta.Enter += tabPageConsulta_Enter;
             // 
             // dataGridViewConsulta
             // 
@@ -156,6 +159,7 @@
             dataGridViewConsulta.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewConsulta.Size = new Size(527, 356);
             dataGridViewConsulta.TabIndex = 4;
+            dataGridViewConsulta.CellDoubleClick += dataGridViewConsulta_CellDoubleClick;
             // 
             // btnExcluir
             // 
@@ -177,6 +181,7 @@
             btnExcluir.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnExcluir.UseAccentColor = false;
             btnExcluir.UseVisualStyleBackColor = true;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // btnEditar
             // 
@@ -187,7 +192,7 @@
             btnEditar.HighEmphasis = true;
             btnEditar.Icon = null;
             btnEditar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnEditar.Location = new Point(276, 371);
+            btnEditar.Location = new Point(355, 371);
             btnEditar.Margin = new Padding(4, 6, 4, 6);
             btnEditar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnEditar.Name = "btnEditar";
@@ -198,6 +203,7 @@
             btnEditar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnEditar.UseAccentColor = false;
             btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnNovo
             // 
@@ -208,7 +214,7 @@
             btnNovo.HighEmphasis = true;
             btnNovo.Icon = null;
             btnNovo.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnNovo.Location = new Point(365, 371);
+            btnNovo.Location = new Point(276, 371);
             btnNovo.Margin = new Padding(4, 6, 4, 6);
             btnNovo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnNovo.Name = "btnNovo";
@@ -219,6 +225,7 @@
             btnNovo.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btnNovo.UseAccentColor = false;
             btnNovo.UseVisualStyleBackColor = true;
+            btnNovo.Click += btnNovo_Click;
             // 
             // imageList
             // 
@@ -258,7 +265,7 @@
         protected DataGridView dataGridViewConsulta;
         protected TabPage tabPageConsulta;
         private Panel panel1;
+        private ReaLTaiizor.Controls.MaterialButton btnSalvar;
         private ReaLTaiizor.Controls.MaterialButton btnCancelar;
-        protected ReaLTaiizor.Controls.MaterialButton btnSalvar;
     }
 }
