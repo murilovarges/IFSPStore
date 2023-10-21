@@ -1,7 +1,7 @@
 using System.Text.Json;
-using IFStore.Domain.Entities;
+using IFSPStore.Domain.Entities;
 
-namespace IFSPStrore.Teste
+namespace IFSPStore.Teste
 {
     [TestClass]
     public class UnitTestDomain

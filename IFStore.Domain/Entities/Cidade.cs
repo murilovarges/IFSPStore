@@ -1,6 +1,6 @@
-﻿using IFStore.Domain.Base;
+﻿using IFSPStore.Domain.Base;
 
-namespace IFStore.Domain.Entities
+namespace IFSPStore.Domain.Entities
 {
     public class Cidade : BaseEntity<int>
     {
@@ -17,7 +17,5 @@ namespace IFStore.Domain.Entities
 
         public string? Nome { get; set; }
         public string? Estado { get; set; }
-        //public string? CampoTeste { get; set; }
-
     }
 }

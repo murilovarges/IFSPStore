@@ -1,18 +1,17 @@
 ﻿using IFSPStore.App.Base;
 using IFSPStore.Domain.Base;
+using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validators;
-using IFStore.Domain.Base;
-using IFStore.Domain.Entities;
 
 namespace IFSPStore.App.Cadastros
 {
-    public partial class CadastroUsuarios : CadastroBase
+    public partial class CadastroUsuario : CadastroBase
     {
         private readonly IBaseService<Usuario> _usuarioService;
 
         private List<Usuario>? usuarios;
 
-        public CadastroUsuarios(IBaseService<Usuario> usuarioService)
+        public CadastroUsuario(IBaseService<Usuario> usuarioService)
         {
             _usuarioService = usuarioService;
             InitializeComponent();
@@ -68,11 +67,11 @@ namespace IFSPStore.App.Cadastros
             }
         }
 
-
         protected override void CarregaGrid()
         {
             usuarios = _usuarioService.Get<Usuario>().ToList();
             dataGridViewConsulta.DataSource = usuarios;
+            dataGridViewConsulta.Columns["Senha"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

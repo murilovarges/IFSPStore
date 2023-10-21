@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using IFSPStore.Domain.Base;
-using IFStore.Domain.Base;
 
 namespace IFSPStore.Service.Services
 {
@@ -9,6 +8,11 @@ namespace IFSPStore.Service.Services
     {
         private readonly IBaseRepository<TEntity> _baseRepository;
         private readonly IMapper _mapper;
+
+        public void AttachObject(object obj)
+        {
+            _baseRepository.AttachObject(obj);
+        }
 
         public BaseService(IBaseRepository<TEntity> baseRepository, IMapper mapper)
         {
@@ -24,6 +28,7 @@ namespace IFSPStore.Service.Services
             var entity = _mapper.Map<TEntity>(inputModel);
 
             Validate(entity, Activator.CreateInstance<TValidator>());
+            
             _baseRepository.Insert(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
@@ -59,6 +64,8 @@ namespace IFSPStore.Service.Services
             var entity = _mapper.Map<TEntity>(inputModel);
 
             Validate(entity, Activator.CreateInstance<TValidator>());
+
+            _baseRepository.ClearChangeTracker();
             _baseRepository.Update(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);

@@ -1,4 +1,4 @@
-﻿namespace IFStore.Domain.Base
+﻿namespace IFSPStore.Domain.Base
 {
     public abstract class BaseEntity<IId> : IBaseEntity
     {

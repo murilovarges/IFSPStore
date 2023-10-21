@@ -6,7 +6,12 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>ifsp_icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ifsp_icon.ico" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
@@ -22,6 +27,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Cadastros\CadastroGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Cadastros\CadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

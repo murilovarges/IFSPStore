@@ -1,10 +1,10 @@
 ﻿using IFSPStore.Domain.Base;
 using IFSPStore.Repository.Context;
-using IFStore.Domain.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace IFSPStore.Repository.Repository
 {
-    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : class, IBaseEntity
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity<int>
     {
         protected readonly MySqlContext _mySqlContext;
 
@@ -13,15 +13,25 @@ namespace IFSPStore.Repository.Repository
             _mySqlContext = mySqlContext;
         }
 
+        public void ClearChangeTracker()
+        {
+            _mySqlContext.ChangeTracker.Clear();
+        }
+        public void AttachObject(object obj)
+        {
+            _mySqlContext.Attach(obj);
+        }
+
         public void Insert(TEntity obj)
         {
+            _mySqlContext.Entry(obj).State = EntityState.Added;
             _mySqlContext.Set<TEntity>().Add(obj);
             _mySqlContext.SaveChanges();
         }
 
         public void Update(TEntity obj)
         {
-            _mySqlContext.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _mySqlContext.Entry(obj).State = EntityState.Modified;
             _mySqlContext.SaveChanges();
         }
 
@@ -32,7 +42,7 @@ namespace IFSPStore.Repository.Repository
         }
 
         public IList<TEntity> Select() => _mySqlContext.Set<TEntity>().ToList();
-      
+
         public TEntity Select(object id) => _mySqlContext.Set<TEntity>().Find(id)!;
     }
 }

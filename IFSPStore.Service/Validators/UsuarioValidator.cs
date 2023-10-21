@@ -1,6 +1,6 @@
 ﻿
 using FluentValidation;
-using IFStore.Domain.Entities;
+using IFSPStore.Domain.Entities;
 
 namespace IFSPStore.Service.Validators
 {

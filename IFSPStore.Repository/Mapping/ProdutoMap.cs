@@ -1,4 +1,4 @@
-﻿using IFStore.Domain.Entities;
+﻿using IFSPStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -25,7 +25,7 @@ namespace IFSPStore.Repository.Mapping
             builder.Property(prop => prop.UnidadeVenda)
                 .HasColumnType("varchar(10)");
 
-            builder.HasOne<Grupo>(prop => prop.Grupo);
+            builder.HasOne(prop => prop.Grupo);
         }
     }
 }

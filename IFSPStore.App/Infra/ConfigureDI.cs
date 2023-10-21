@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using IFSPStore.App.Cadastros;
 using IFSPStore.Domain.Base;
+using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
 using IFSPStore.Repository.Repository;
 using IFSPStore.Service.Services;
-using IFStore.Domain.Base;
-using IFStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -59,7 +58,9 @@ namespace IFSPStore.App.Infra
             Services.AddScoped<IBaseService<Produto>, BaseService<Produto>>();
             Services.AddScoped<IBaseService<Venda>, BaseService<Venda>>();
             
-            Services.AddScoped<CadastroUsuarios, CadastroUsuarios>();
+            Services.AddScoped<CadastroUsuario, CadastroUsuario>();
+            Services.AddScoped<CadastroGrupo, CadastroGrupo>();
+            Services.AddScoped<CadastroProduto, CadastroProduto>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>

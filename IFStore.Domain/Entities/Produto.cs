@@ -1,6 +1,6 @@
-﻿using IFStore.Domain.Base;
+﻿using IFSPStore.Domain.Base;
 
-namespace IFStore.Domain.Entities
+namespace IFSPStore.Domain.Entities
 {
     public class Produto : BaseEntity<int>
     {

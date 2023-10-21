@@ -1,5 +1,5 @@
-﻿using IFSPStore.Repository.Mapping;
-using IFStore.Domain.Entities;
+﻿using IFSPStore.Domain.Entities;
+using IFSPStore.Repository.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 

@@ -1,6 +1,6 @@
 ﻿namespace IFSPStore.App.Cadastros
 {
-    partial class CadastroUsuarios
+    partial class CadastroUsuario
     {
         /// <summary>
         /// Required designer variable.

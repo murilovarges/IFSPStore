@@ -1,4 +1,4 @@
-﻿using IFStore.Domain.Entities;
+﻿using IFSPStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

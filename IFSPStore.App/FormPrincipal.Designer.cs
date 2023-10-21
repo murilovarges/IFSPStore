@@ -32,14 +32,14 @@
             menuStrip1 = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             usuáriosToolStripMenuItem = new ToolStripMenuItem();
-            vendaToolStripMenuItem = new ToolStripMenuItem();
             toolStripMenuItem1 = new ToolStripSeparator();
-            toolStripMenuItem2 = new ToolStripSeparator();
             grupoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             produtosToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
             cidadesToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripSeparator();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripSeparator();
+            vendaToolStripMenuItem = new ToolStripMenuItem();
             relatóriosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -67,33 +67,29 @@
             usuáriosToolStripMenuItem.Text = "&Usuários";
             usuáriosToolStripMenuItem.Click += usuáriosToolStripMenuItem_Click;
             // 
-            // vendaToolStripMenuItem
-            // 
-            vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
-            vendaToolStripMenuItem.Size = new Size(180, 22);
-            vendaToolStripMenuItem.Text = "&Vendas";
-            // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(177, 6);
-            // 
-            // toolStripMenuItem2
-            // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // grupoDeProdutosToolStripMenuItem
             // 
             grupoDeProdutosToolStripMenuItem.Name = "grupoDeProdutosToolStripMenuItem";
             grupoDeProdutosToolStripMenuItem.Size = new Size(180, 22);
             grupoDeProdutosToolStripMenuItem.Text = "&Grupo de Produtos";
+            grupoDeProdutosToolStripMenuItem.Click += grupoDeProdutosToolStripMenuItem_Click;
             // 
             // produtosToolStripMenuItem
             // 
             produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             produtosToolStripMenuItem.Size = new Size(180, 22);
             produtosToolStripMenuItem.Text = "&Produtos";
+            produtosToolStripMenuItem.Click += produtosToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(177, 6);
             // 
             // cidadesToolStripMenuItem
             // 
@@ -101,16 +97,22 @@
             cidadesToolStripMenuItem.Size = new Size(180, 22);
             cidadesToolStripMenuItem.Text = "C&idades";
             // 
-            // toolStripMenuItem3
-            // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(177, 6);
-            // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(177, 6);
+            // 
+            // vendaToolStripMenuItem
+            // 
+            vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
+            vendaToolStripMenuItem.Size = new Size(180, 22);
+            vendaToolStripMenuItem.Text = "&Vendas";
             // 
             // relatóriosToolStripMenuItem
             // 
@@ -126,6 +128,7 @@
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(821, 492);
             Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             Name = "FormPrincipal";
             Text = "IFSP - Sistema de Gerenciamento Acadêmico";

@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
-using IFStore.Domain.Base;
 
 namespace IFSPStore.Domain.Base
 {
     public interface IBaseService<TEntity> where TEntity : IBaseEntity
     {
+        public void AttachObject(object obj);
         TOutputModel Add<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
             where TValidator : AbstractValidator<TEntity>
             where TInputModel : class

@@ -242,6 +242,7 @@
             ClientSize = new Size(554, 518);
             Controls.Add(materialTabControl);
             DrawerTabControl = materialTabControl;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CadastroBase";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CadastroBase";

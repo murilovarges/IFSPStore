@@ -1,7 +1,7 @@
-﻿using IFStore.Domain.Base;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
+using IFSPStore.Domain.Base;
 
-namespace IFStore.Domain.Entities
+namespace IFSPStore.Domain.Entities
 {
     public class Venda : BaseEntity<int>
     {

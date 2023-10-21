@@ -24,7 +24,25 @@ namespace IFSPStore.App
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (ConfigureDI.ServicesProvider == null) return;
-            var cad = ConfigureDI.ServicesProvider.GetService<CadastroUsuarios>();
+            var cad = ConfigureDI.ServicesProvider.GetService<CadastroUsuario>();
+            if (cad == null) return;
+            cad.MdiParent = this;
+            cad.Show();
+        }
+
+        private void grupoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ConfigureDI.ServicesProvider == null) return;
+            var cad = ConfigureDI.ServicesProvider.GetService<CadastroGrupo>();
+            if (cad == null) return;
+            cad.MdiParent = this;
+            cad.Show();
+        }
+
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ConfigureDI.ServicesProvider == null) return;
+            var cad = ConfigureDI.ServicesProvider.GetService<CadastroProduto>();
             if (cad == null) return;
             cad.MdiParent = this;
             cad.Show();
