@@ -73,6 +73,7 @@ namespace IFSPStore.App.Cadastros
             usuarios = _usuarioService.Get<UsuarioModel>().ToList();
             dataGridViewConsulta.DataSource = usuarios;
             dataGridViewConsulta.Columns["Senha"]!.Visible = false;
+            dataGridViewConsulta.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

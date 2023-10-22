@@ -19,6 +19,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFSPStore.App", "IFSPStore.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IFSPStore.Teste", "IFStore.Teste\IFSPStore.Teste.csproj", "{B1591052-6E07-43DF-BD6E-935E101474FE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens de Solução", "{9E1F5A8B-36C0-484E-8226-66A2DE5BBFE7}"
+	ProjectSection(SolutionItems) = preProject
+		IFSPStore_DBModel.png = IFSPStore_DBModel.png
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

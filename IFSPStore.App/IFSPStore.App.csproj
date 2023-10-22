@@ -30,6 +30,9 @@
     <Compile Update="Cadastros\CadastroCidade.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Cadastros\CadastroVenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Cadastros\CadastroGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
