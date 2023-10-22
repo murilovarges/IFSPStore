@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using IFSPStore.App.Cadastros;
+using IFSPStore.App.Models;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
@@ -29,7 +30,7 @@ namespace IFSPStore.App.Infra
                 const string username = "root";
                 const string password = "1122";
                 const string strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
-                
+
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.EnableSensitiveDataLogging();
 
@@ -38,7 +39,7 @@ namespace IFSPStore.App.Infra
                 {
                     opt.CommandTimeout(180);
                     opt.EnableRetryOnFailure(5);
-                    
+
                 });
             });
 
@@ -49,7 +50,7 @@ namespace IFSPStore.App.Infra
             Services.AddScoped<IBaseRepository<Grupo>, BaseRepository<Grupo>>();
             Services.AddScoped<IBaseRepository<Produto>, BaseRepository<Produto>>();
             Services.AddScoped<IBaseRepository<Venda>, BaseRepository<Venda>>();
-            
+
             // Services
             Services.AddScoped<IBaseService<Usuario>, BaseService<Usuario>>();
             Services.AddScoped<IBaseService<Cidade>, BaseService<Cidade>>();
@@ -57,24 +58,35 @@ namespace IFSPStore.App.Infra
             Services.AddScoped<IBaseService<Grupo>, BaseService<Grupo>>();
             Services.AddScoped<IBaseService<Produto>, BaseService<Produto>>();
             Services.AddScoped<IBaseService<Venda>, BaseService<Venda>>();
-            
-            Services.AddScoped<CadastroUsuario, CadastroUsuario>();
-            Services.AddScoped<CadastroGrupo, CadastroGrupo>();
-            Services.AddScoped<CadastroProduto, CadastroProduto>();
+
+            // Formulários
+            Services.AddTransient<CadastroUsuario, CadastroUsuario>();
+            Services.AddTransient<CadastroGrupo, CadastroGrupo>();
+            Services.AddTransient<CadastroProduto, CadastroProduto>();
+            Services.AddTransient<CadastroCidade, CadastroCidade>();
+            Services.AddTransient<CadastroCliente, CadastroCliente>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
             {
-                    config.CreateMap<Usuario, Usuario>();
-                    config.CreateMap<Cidade, Cidade>();
-                    config.CreateMap<Cliente, Cliente>();
-                    config.CreateMap<Grupo, Grupo>();
-                    config.CreateMap<Produto, Produto>();
-                    config.CreateMap<Venda, Venda>();
-                    config.CreateMap<VendaItem, VendaItem>();
+                config.CreateMap<Usuario, UsuarioModel>();
+                config.CreateMap<Cidade, CidadeModel>()                    
+                    .ForMember(d => d.NomeEstado, d => d.MapFrom(x => $"{x.Nome}/{x.Estado}"));
+                config.CreateMap<Cliente, ClienteModel>()
+                    .ForMember(d => d.Cidade, 
+                    d => d.MapFrom(x => $"{x.Cidade!.Nome}/{x.Cidade!.Estado}"))
+                    .ForMember(d => d.IdCidade, d => d.MapFrom(x => x.Cidade!.Id));
+                //config.CreateMap<Grupo, Grupo>();
+                config.CreateMap<Produto, ProdutoModel>()
+                    .ForMember(d => d.Grupo,
+                        d => d.MapFrom(x => x.Grupo!.Nome))
+                    .ForMember(d => d.IdGrupo, d => d.MapFrom(x => x.Grupo!.Id));
 
-                }).CreateMapper());
-            
+                //config.CreateMap<Venda, Venda>();
+                //config.CreateMap<VendaItem, VendaItem>();
+
+            }).CreateMapper());
+
             ServicesProvider = Services.BuildServiceProvider();
         }
     }

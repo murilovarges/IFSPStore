@@ -10,7 +10,7 @@
 
         void Delete(object id);
 
-        IList<TEntity> Select();
+        IList<TEntity> Select(IList<string>? includes = null);
 
         TEntity Select(object id);
     }

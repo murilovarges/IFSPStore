@@ -96,12 +96,14 @@
             cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
             cidadesToolStripMenuItem.Size = new Size(180, 22);
             cidadesToolStripMenuItem.Text = "C&idades";
+            cidadesToolStripMenuItem.Click += cidadesToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             clientesToolStripMenuItem.Size = new Size(180, 22);
             clientesToolStripMenuItem.Text = "&Clientes";
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // toolStripMenuItem3
             // 

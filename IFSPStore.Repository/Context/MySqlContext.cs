@@ -10,15 +10,16 @@ namespace IFSPStore.Repository.Context
         public MySqlContext(DbContextOptions<MySqlContext> options) : base(options)
         {
             Database.EnsureCreated();
+            ChangeTracker.LazyLoadingEnabled = false;
         }
 
-        public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Cidade> Cidade { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Grupo> Grupo { get; set; }
-        public DbSet<Produto> Produto { get; set; }
-        public DbSet<Venda> Venda { get; set; }
-        public DbSet<VendaItem> VendaItem { get; set; }
+        public DbSet<Usuario>? Usuario { get; set; }
+        public DbSet<Cidade>? Cidade { get; set; }
+        public DbSet<Cliente>? Cliente { get; set; }
+        public DbSet<Grupo>? Grupo { get; set; }
+        public DbSet<Produto>? Produto { get; set; }
+        public DbSet<Venda>? Venda { get; set; }
+        public DbSet<VendaItem>? VendaItem { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

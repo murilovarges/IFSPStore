@@ -38,14 +38,13 @@ namespace IFSPStore.App.Base
         {
             LimpaCampos();
             materialTabControl.SelectedIndex = 0;
-            materialTabControl.Focus();
+            tabPageCadastro.Focus();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             Editar();
         }
-
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
@@ -115,7 +114,7 @@ namespace IFSPStore.App.Base
                 var linha = dataGridViewConsulta.SelectedRows[0];
                 CarregaRegistro(linha);
                 materialTabControl.SelectedIndex = 0;
-                materialTabControl.Focus();
+                tabPageCadastro.Focus();
             }
             else
             {
@@ -136,5 +135,4 @@ namespace IFSPStore.App.Base
 
         #endregion
     }
-
 }

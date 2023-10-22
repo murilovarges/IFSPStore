@@ -1,7 +1,7 @@
 ﻿using IFSPStore.App.Base;
+using IFSPStore.App.Models;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
-using IFSPStore.Service.Services;
 using IFSPStore.Service.Validators;
 
 namespace IFSPStore.App.Cadastros
@@ -11,7 +11,7 @@ namespace IFSPStore.App.Cadastros
         private readonly IBaseService<Produto> _produtoService;
         private readonly IBaseService<Grupo> _grupoService;
 
-        private List<Produto>? produtos;
+        private List<ProdutoModel>? produtos;
 
         public CadastroProduto(IBaseService<Produto> produtoService, IBaseService<Grupo> grupoService)
         {
@@ -93,8 +93,9 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            produtos = _produtoService.Get<Produto>().ToList();
+            produtos = _produtoService.Get<ProdutoModel>(new [] {"Grupo"}).ToList();
             dataGridViewConsulta.DataSource = produtos;
+            dataGridViewConsulta.Columns["IdGrupo"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
@@ -103,6 +104,7 @@ namespace IFSPStore.App.Cadastros
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtUnidadeVenda.Text = linha?.Cells["UnidadeVenda"].Value.ToString();
             txtPreco.Text = linha?.Cells["Preco"].Value.ToString();
+            cboGrupo.SelectedValue = linha?.Cells["IdGrupo"].Value;
             txtDataCompra.Text = DateTime.TryParse(linha?.Cells["DataCompra"].Value.ToString(), out var dataC)
                ? dataC.ToString("g")
                : "";

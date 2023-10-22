@@ -1,4 +1,5 @@
 ﻿using IFSPStore.App.Base;
+using IFSPStore.App.Models;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Service.Validators;
@@ -9,7 +10,7 @@ namespace IFSPStore.App.Cadastros
     {
         private readonly IBaseService<Usuario> _usuarioService;
 
-        private List<Usuario>? usuarios;
+        private List<UsuarioModel>? usuarios;
 
         public CadastroUsuario(IBaseService<Usuario> usuarioService)
         {
@@ -69,7 +70,7 @@ namespace IFSPStore.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            usuarios = _usuarioService.Get<Usuario>().ToList();
+            usuarios = _usuarioService.Get<UsuarioModel>().ToList();
             dataGridViewConsulta.DataSource = usuarios;
             dataGridViewConsulta.Columns["Senha"]!.Visible = false;
         }

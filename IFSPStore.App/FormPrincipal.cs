@@ -23,29 +23,37 @@ namespace IFSPStore.App
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ConfigureDI.ServicesProvider == null) return;
-            var cad = ConfigureDI.ServicesProvider.GetService<CadastroUsuario>();
-            if (cad == null) return;
-            cad.MdiParent = this;
-            cad.Show();
+            Exibeformulario<CadastroUsuario>();
         }
 
         private void grupoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ConfigureDI.ServicesProvider == null) return;
-            var cad = ConfigureDI.ServicesProvider.GetService<CadastroGrupo>();
-            if (cad == null) return;
-            cad.MdiParent = this;
-            cad.Show();
+            Exibeformulario<CadastroGrupo>();
         }
 
         private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ConfigureDI.ServicesProvider == null) return;
-            var cad = ConfigureDI.ServicesProvider.GetService<CadastroProduto>();
-            if (cad == null) return;
-            cad.MdiParent = this;
-            cad.Show();
+            Exibeformulario<CadastroProduto>();
+        }
+
+        private void cidadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroCidade>();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroCliente>();
+        }
+
+        private void Exibeformulario<TFormlario>() where TFormlario : Form
+        {
+            var cad = ConfigureDI.ServicesProvider!.GetService<TFormlario>();
+            if (cad != null && !cad.IsDisposed)
+            {
+                cad.MdiParent = this;
+                cad.Show();
+            }
         }
     }
 }

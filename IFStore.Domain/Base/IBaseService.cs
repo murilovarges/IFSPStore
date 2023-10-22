@@ -12,7 +12,7 @@ namespace IFSPStore.Domain.Base
 
         void Delete(int id);
 
-        IEnumerable<TOutputModel> Get<TOutputModel>() where TOutputModel : class;
+        IEnumerable<TOutputModel> Get<TOutputModel>(IList<string>? includes = null) where TOutputModel : class;
 
         TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class;
 
