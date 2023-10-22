@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IFSPStore.Domain\IFSPStore.Domain.csproj" />
     <ProjectReference Include="..\IFSPStore.Repository\IFSPStore.Repository.csproj" />
     <ProjectReference Include="..\IFSPStore.Service\IFSPStore.Service.csproj" />
-    <ProjectReference Include="..\IFStore.Domain\IFSPStore.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
