@@ -115,6 +115,7 @@
             vendaToolStripMenuItem.Name = "vendaToolStripMenuItem";
             vendaToolStripMenuItem.Size = new Size(180, 22);
             vendaToolStripMenuItem.Text = "&Vendas";
+            vendaToolStripMenuItem.Click += vendaToolStripMenuItem_Click;
             // 
             // relatóriosToolStripMenuItem
             // 

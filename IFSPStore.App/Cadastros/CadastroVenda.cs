@@ -8,13 +8,40 @@ namespace IFSPStore.App.Cadastros
     public partial class CadastroVenda : CadastroBase
     {
         private readonly IBaseService<Venda> _vendaService;
+        private readonly IBaseService<Usuario> _usuarioService;
+        private readonly IBaseService<Cliente> _clienteService;
+        private readonly IBaseService<Produto> _produtoService;
 
         private List<Venda>? vendas;
 
-        public CadastroVenda(IBaseService<Venda> vendaService)
+        public CadastroVenda(IBaseService<Venda> vendaService,
+                             IBaseService<Usuario> usuarioService,
+                             IBaseService<Cliente> clienteService,
+                             IBaseService<Produto> produtoService)
+
         {
             _vendaService = vendaService;
+            _usuarioService = usuarioService;
+            _clienteService = clienteService;
+            _produtoService = produtoService;
             InitializeComponent();
+            CarregarCombo();
+        }
+
+        private void CarregarCombo()
+        {
+            cboUsuario.ValueMember = "Id";
+            cboUsuario.DisplayMember = "Nome";
+            cboUsuario.DataSource = _usuarioService.Get<Usuario>().ToList();
+
+            cboCliente.ValueMember = "Id";
+            cboCliente.DisplayMember = "Nome";
+            cboCliente.DataSource = _clienteService.Get<Cliente>().ToList();
+
+            cboProduto.ValueMember = "Id";
+            cboProduto.DisplayMember = "Nome";
+            cboProduto.DataSource = _produtoService.Get<Produto>().ToList();
+
         }
 
         private void PreencheObjeto(Venda venda)
@@ -68,7 +95,7 @@ namespace IFSPStore.App.Cadastros
         {
             vendas = _vendaService.Get<Venda>().ToList();
             dataGridViewConsulta.DataSource = vendas;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)

@@ -65,6 +65,7 @@ namespace IFSPStore.App.Infra
             Services.AddTransient<CadastroProduto, CadastroProduto>();
             Services.AddTransient<CadastroCidade, CadastroCidade>();
             Services.AddTransient<CadastroCliente, CadastroCliente>();
+            Services.AddTransient<CadastroVenda, CadastroVenda>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>

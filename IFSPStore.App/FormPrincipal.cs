@@ -46,6 +46,11 @@ namespace IFSPStore.App
             Exibeformulario<CadastroCliente>();
         }
 
+        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exibeformulario<CadastroVenda>();
+        }
+
         private void Exibeformulario<TFormlario>() where TFormlario : Form
         {
             var cad = ConfigureDI.ServicesProvider!.GetService<TFormlario>();
