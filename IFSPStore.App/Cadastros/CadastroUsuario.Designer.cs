@@ -30,12 +30,12 @@
         {
             txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtLogin = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataLogin = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataCadastro = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             chkAtivo = new ReaLTaiizor.Controls.MaterialCheckBox();
+            txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
@@ -126,37 +126,6 @@
             txtLogin.TextAlign = HorizontalAlignment.Left;
             txtLogin.TrailingIcon = null;
             txtLogin.UseSystemPasswordChar = false;
-            // 
-            // txtNome
-            // 
-            txtNome.AnimateReadOnly = false;
-            txtNome.AutoCompleteMode = AutoCompleteMode.None;
-            txtNome.AutoCompleteSource = AutoCompleteSource.None;
-            txtNome.BackgroundImageLayout = ImageLayout.None;
-            txtNome.CharacterCasing = CharacterCasing.Normal;
-            txtNome.Depth = 0;
-            txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtNome.HideSelection = true;
-            txtNome.Hint = "Nome";
-            txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(14, 6);
-            txtNome.MaxLength = 32767;
-            txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtNome.Name = "txtNome";
-            txtNome.PasswordChar = '\0';
-            txtNome.PrefixSuffixText = null;
-            txtNome.ReadOnly = false;
-            txtNome.RightToLeft = RightToLeft.No;
-            txtNome.SelectedText = "";
-            txtNome.SelectionLength = 0;
-            txtNome.SelectionStart = 0;
-            txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(484, 48);
-            txtNome.TabIndex = 0;
-            txtNome.TabStop = false;
-            txtNome.TextAlign = HorizontalAlignment.Left;
-            txtNome.TrailingIcon = null;
-            txtNome.UseSystemPasswordChar = false;
             // 
             // txtDataLogin
             // 
@@ -299,13 +268,44 @@
             chkAtivo.UseAccentColor = false;
             chkAtivo.UseVisualStyleBackColor = true;
             // 
-            // CadastroUsuarios
+            // txtNome
+            // 
+            txtNome.AnimateReadOnly = false;
+            txtNome.AutoCompleteMode = AutoCompleteMode.None;
+            txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackgroundImageLayout = ImageLayout.None;
+            txtNome.CharacterCasing = CharacterCasing.Normal;
+            txtNome.Depth = 0;
+            txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNome.HideSelection = true;
+            txtNome.Hint = "Nome";
+            txtNome.LeadingIcon = null;
+            txtNome.Location = new Point(14, 6);
+            txtNome.MaxLength = 32767;
+            txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtNome.Name = "txtNome";
+            txtNome.PasswordChar = '\0';
+            txtNome.PrefixSuffixText = null;
+            txtNome.ReadOnly = false;
+            txtNome.RightToLeft = RightToLeft.No;
+            txtNome.SelectedText = "";
+            txtNome.SelectionLength = 0;
+            txtNome.SelectionStart = 0;
+            txtNome.ShortcutsEnabled = true;
+            txtNome.Size = new Size(484, 48);
+            txtNome.TabIndex = 0;
+            txtNome.TabStop = false;
+            txtNome.TextAlign = HorizontalAlignment.Left;
+            txtNome.TrailingIcon = null;
+            txtNome.UseSystemPasswordChar = false;
+            // 
+            // CadastroUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(635, 399);
             Location = new Point(0, 0);
-            Name = "CadastroUsuarios";
+            Name = "CadastroUsuario";
             Text = "Cadastro de Usuários";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
@@ -317,11 +317,11 @@
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtSenha;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtLogin;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDataLogin;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDataCadastro;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private ReaLTaiizor.Controls.MaterialCheckBox chkAtivo;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
     }
 }

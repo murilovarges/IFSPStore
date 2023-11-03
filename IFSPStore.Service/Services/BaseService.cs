@@ -47,13 +47,18 @@ namespace IFSPStore.Service.Services
             return outputModels;
         }
 
-        public TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class
+        public TOutputModel GetById<TOutputModel>(int id, IList<string>? includes = null) where TOutputModel : class
         {
-            var entity = _baseRepository.Select(id);
+            var entity = _baseRepository.Select(id, includes);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
 
             return outputModel;
+        }
+
+        public TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class
+        {
+            throw new NotImplementedException();
         }
 
         public TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
@@ -80,5 +85,7 @@ namespace IFSPStore.Service.Services
 
             validator.ValidateAndThrow(obj);
         }
+
+     
     }
 }

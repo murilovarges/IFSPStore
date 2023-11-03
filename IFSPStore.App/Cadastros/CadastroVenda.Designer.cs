@@ -30,41 +30,51 @@
         {
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             groupBox1 = new GroupBox();
+            lblValor = new ReaLTaiizor.Controls.MaterialLabel();
+            lblQtdItens = new ReaLTaiizor.Controls.MaterialLabel();
+            btnAdicionar = new ReaLTaiizor.Controls.MaterialButton();
             txtVlTotal = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtQuantidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtVlUnitario = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboProduto = new ReaLTaiizor.Controls.MaterialComboBox();
-            dataGridView1 = new DataGridView();
+            dataGridViewItens = new DataGridView();
             cboCliente = new ReaLTaiizor.Controls.MaterialComboBox();
             cboUsuario = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtValorTotalVenda = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataVenda = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).BeginInit();
             SuspendLayout();
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new Size(730, 611);
+            materialTabControl.Location = new Point(3, 113);
+            materialTabControl.Margin = new Padding(3, 5, 3, 5);
+            materialTabControl.Size = new Size(724, 525);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
             // 
             tabPageCadastro.Controls.Add(txtDataVenda);
-            tabPageCadastro.Controls.Add(txtValorTotalVenda);
             tabPageCadastro.Controls.Add(cboUsuario);
             tabPageCadastro.Controls.Add(cboCliente);
             tabPageCadastro.Controls.Add(groupBox1);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Size = new Size(722, 576);
+            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Size = new Size(716, 490);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(groupBox1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCliente, 0);
             tabPageCadastro.Controls.SetChildIndex(cboUsuario, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtValorTotalVenda, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataVenda, 0);
+            // 
+            // tabPageConsulta
+            // 
+            tabPageConsulta.Margin = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Padding = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Size = new Size(619, 567);
             // 
             // txtId
             // 
@@ -78,7 +88,8 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(504, 6);
+            txtId.Location = new Point(576, 8);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -90,8 +101,8 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(107, 48);
-            txtId.TabIndex = 11;
+            txtId.Size = new Size(122, 48);
+            txtId.TabIndex = 2;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
@@ -99,17 +110,68 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblValor);
+            groupBox1.Controls.Add(lblQtdItens);
+            groupBox1.Controls.Add(btnAdicionar);
             groupBox1.Controls.Add(txtVlTotal);
             groupBox1.Controls.Add(txtQuantidade);
             groupBox1.Controls.Add(txtVlUnitario);
             groupBox1.Controls.Add(cboProduto);
-            groupBox1.Controls.Add(dataGridView1);
-            groupBox1.Location = new Point(6, 131);
+            groupBox1.Controls.Add(dataGridViewItens);
+            groupBox1.Location = new Point(7, 115);
+            groupBox1.Margin = new Padding(3, 4, 3, 4);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(608, 238);
-            groupBox1.TabIndex = 13;
+            groupBox1.Padding = new Padding(3, 4, 3, 4);
+            groupBox1.Size = new Size(695, 317);
+            groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Produtos da Venda";
+            // 
+            // lblValor
+            // 
+            lblValor.AutoSize = true;
+            lblValor.Depth = 0;
+            lblValor.FlatStyle = FlatStyle.Flat;
+            lblValor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblValor.Location = new Point(499, 291);
+            lblValor.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            lblValor.Name = "lblValor";
+            lblValor.Size = new Size(96, 19);
+            lblValor.TabIndex = 8;
+            lblValor.Text = "Valor Total: 0";
+            // 
+            // lblQtdItens
+            // 
+            lblQtdItens.AutoSize = true;
+            lblQtdItens.Depth = 0;
+            lblQtdItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
+            lblQtdItens.Location = new Point(6, 291);
+            lblQtdItens.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            lblQtdItens.Name = "lblQtdItens";
+            lblQtdItens.Size = new Size(115, 19);
+            lblQtdItens.TabIndex = 7;
+            lblQtdItens.Text = "Qtd. Produtos: 0";
+            // 
+            // btnAdicionar
+            // 
+            btnAdicionar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnAdicionar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnAdicionar.Depth = 0;
+            btnAdicionar.HighEmphasis = true;
+            btnAdicionar.Icon = null;
+            btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnAdicionar.Location = new Point(614, 33);
+            btnAdicionar.Margin = new Padding(5, 8, 5, 8);
+            btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.NoAccentTextColor = Color.Empty;
+            btnAdicionar.Size = new Size(64, 36);
+            btnAdicionar.TabIndex = 4;
+            btnAdicionar.Text = "+";
+            btnAdicionar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnAdicionar.UseAccentColor = false;
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // txtVlTotal
             // 
@@ -121,9 +183,10 @@
             txtVlTotal.Depth = 0;
             txtVlTotal.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtVlTotal.HideSelection = true;
-            txtVlTotal.Hint = "Valor Total";
+            txtVlTotal.Hint = "Vl.Total";
             txtVlTotal.LeadingIcon = null;
-            txtVlTotal.Location = new Point(467, 22);
+            txtVlTotal.Location = new Point(465, 29);
+            txtVlTotal.Margin = new Padding(3, 4, 3, 4);
             txtVlTotal.MaxLength = 32767;
             txtVlTotal.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtVlTotal.Name = "txtVlTotal";
@@ -135,8 +198,8 @@
             txtVlTotal.SelectionLength = 0;
             txtVlTotal.SelectionStart = 0;
             txtVlTotal.ShortcutsEnabled = true;
-            txtVlTotal.Size = new Size(135, 48);
-            txtVlTotal.TabIndex = 18;
+            txtVlTotal.Size = new Size(130, 48);
+            txtVlTotal.TabIndex = 3;
             txtVlTotal.TabStop = false;
             txtVlTotal.TextAlign = HorizontalAlignment.Left;
             txtVlTotal.TrailingIcon = null;
@@ -152,9 +215,10 @@
             txtQuantidade.Depth = 0;
             txtQuantidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtQuantidade.HideSelection = true;
-            txtQuantidade.Hint = "Quantidade";
+            txtQuantidade.Hint = "Qtd";
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(363, 22);
+            txtQuantidade.Location = new Point(371, 29);
+            txtQuantidade.Margin = new Padding(3, 4, 3, 4);
             txtQuantidade.MaxLength = 32767;
             txtQuantidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtQuantidade.Name = "txtQuantidade";
@@ -166,12 +230,13 @@
             txtQuantidade.SelectionLength = 0;
             txtQuantidade.SelectionStart = 0;
             txtQuantidade.ShortcutsEnabled = true;
-            txtQuantidade.Size = new Size(98, 48);
-            txtQuantidade.TabIndex = 17;
+            txtQuantidade.Size = new Size(87, 48);
+            txtQuantidade.TabIndex = 2;
             txtQuantidade.TabStop = false;
             txtQuantidade.TextAlign = HorizontalAlignment.Left;
             txtQuantidade.TrailingIcon = null;
             txtQuantidade.UseSystemPasswordChar = false;
+            txtQuantidade.Leave += txtQuantidade_Leave;
             // 
             // txtVlUnitario
             // 
@@ -183,9 +248,10 @@
             txtVlUnitario.Depth = 0;
             txtVlUnitario.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtVlUnitario.HideSelection = true;
-            txtVlUnitario.Hint = "Valor Unitário";
+            txtVlUnitario.Hint = "Vl.Unit.";
             txtVlUnitario.LeadingIcon = null;
-            txtVlUnitario.Location = new Point(224, 23);
+            txtVlUnitario.Location = new Point(262, 29);
+            txtVlUnitario.Margin = new Padding(3, 4, 3, 4);
             txtVlUnitario.MaxLength = 32767;
             txtVlUnitario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtVlUnitario.Name = "txtVlUnitario";
@@ -197,13 +263,13 @@
             txtVlUnitario.SelectionLength = 0;
             txtVlUnitario.SelectionStart = 0;
             txtVlUnitario.ShortcutsEnabled = true;
-            txtVlUnitario.Size = new Size(133, 48);
-            txtVlUnitario.TabIndex = 16;
+            txtVlUnitario.Size = new Size(103, 48);
+            txtVlUnitario.TabIndex = 1;
             txtVlUnitario.TabStop = false;
             txtVlUnitario.TextAlign = HorizontalAlignment.Left;
             txtVlUnitario.TrailingIcon = null;
             txtVlUnitario.UseSystemPasswordChar = false;
-            txtVlUnitario.Click += txtVlUnitario_Click;
+            txtVlUnitario.Leave += txtVlUnitario_Leave;
             // 
             // cboProduto
             // 
@@ -220,22 +286,30 @@
             cboProduto.Hint = "Produto";
             cboProduto.IntegralHeight = false;
             cboProduto.ItemHeight = 43;
-            cboProduto.Location = new Point(3, 22);
+            cboProduto.Location = new Point(3, 28);
+            cboProduto.Margin = new Padding(3, 4, 3, 4);
             cboProduto.MaxDropDownItems = 4;
             cboProduto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboProduto.Name = "cboProduto";
-            cboProduto.Size = new Size(215, 49);
+            cboProduto.Size = new Size(251, 49);
             cboProduto.StartIndex = 0;
-            cboProduto.TabIndex = 15;
+            cboProduto.TabIndex = 0;
             // 
-            // dataGridView1
+            // dataGridViewItens
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Bottom;
-            dataGridView1.Location = new Point(3, 85);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(602, 150);
-            dataGridView1.TabIndex = 13;
+            dataGridViewItens.AllowUserToAddRows = false;
+            dataGridViewItens.AllowUserToDeleteRows = false;
+            dataGridViewItens.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewItens.Location = new Point(3, 85);
+            dataGridViewItens.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewItens.MultiSelect = false;
+            dataGridViewItens.Name = "dataGridViewItens";
+            dataGridViewItens.ReadOnly = true;
+            dataGridViewItens.RowHeadersWidth = 51;
+            dataGridViewItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewItens.Size = new Size(689, 199);
+            dataGridViewItens.TabIndex = 5;
             // 
             // cboCliente
             // 
@@ -252,13 +326,14 @@
             cboCliente.Hint = "Cliente";
             cboCliente.IntegralHeight = false;
             cboCliente.ItemHeight = 43;
-            cboCliente.Location = new Point(9, 61);
+            cboCliente.Location = new Point(10, 64);
+            cboCliente.Margin = new Padding(3, 4, 3, 4);
             cboCliente.MaxDropDownItems = 4;
             cboCliente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboCliente.Name = "cboCliente";
-            cboCliente.Size = new Size(489, 49);
+            cboCliente.Size = new Size(688, 49);
             cboCliente.StartIndex = 0;
-            cboCliente.TabIndex = 14;
+            cboCliente.TabIndex = 3;
             // 
             // cboUsuario
             // 
@@ -275,44 +350,14 @@
             cboUsuario.Hint = "Usuário/Vendedor";
             cboUsuario.IntegralHeight = false;
             cboUsuario.ItemHeight = 43;
-            cboUsuario.Location = new Point(222, 6);
+            cboUsuario.Location = new Point(240, 7);
+            cboUsuario.Margin = new Padding(3, 4, 3, 4);
             cboUsuario.MaxDropDownItems = 4;
             cboUsuario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboUsuario.Name = "cboUsuario";
-            cboUsuario.Size = new Size(276, 49);
+            cboUsuario.Size = new Size(329, 49);
             cboUsuario.StartIndex = 0;
-            cboUsuario.TabIndex = 15;
-            // 
-            // txtValorTotalVenda
-            // 
-            txtValorTotalVenda.AnimateReadOnly = false;
-            txtValorTotalVenda.AutoCompleteMode = AutoCompleteMode.None;
-            txtValorTotalVenda.AutoCompleteSource = AutoCompleteSource.None;
-            txtValorTotalVenda.BackgroundImageLayout = ImageLayout.None;
-            txtValorTotalVenda.CharacterCasing = CharacterCasing.Normal;
-            txtValorTotalVenda.Depth = 0;
-            txtValorTotalVenda.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtValorTotalVenda.HideSelection = true;
-            txtValorTotalVenda.Hint = "Valor Total";
-            txtValorTotalVenda.LeadingIcon = null;
-            txtValorTotalVenda.Location = new Point(504, 62);
-            txtValorTotalVenda.MaxLength = 32767;
-            txtValorTotalVenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtValorTotalVenda.Name = "txtValorTotalVenda";
-            txtValorTotalVenda.PasswordChar = '\0';
-            txtValorTotalVenda.PrefixSuffixText = null;
-            txtValorTotalVenda.ReadOnly = true;
-            txtValorTotalVenda.RightToLeft = RightToLeft.No;
-            txtValorTotalVenda.SelectedText = "";
-            txtValorTotalVenda.SelectionLength = 0;
-            txtValorTotalVenda.SelectionStart = 0;
-            txtValorTotalVenda.ShortcutsEnabled = true;
-            txtValorTotalVenda.Size = new Size(107, 48);
-            txtValorTotalVenda.TabIndex = 16;
-            txtValorTotalVenda.TabStop = false;
-            txtValorTotalVenda.TextAlign = HorizontalAlignment.Left;
-            txtValorTotalVenda.TrailingIcon = null;
-            txtValorTotalVenda.UseSystemPasswordChar = false;
+            cboUsuario.TabIndex = 1;
             // 
             // txtDataVenda
             // 
@@ -329,7 +374,8 @@
             txtDataVenda.Hint = "Data Venda";
             txtDataVenda.InsertKeyMode = InsertKeyMode.Default;
             txtDataVenda.LeadingIcon = null;
-            txtDataVenda.Location = new Point(9, 7);
+            txtDataVenda.Location = new Point(10, 9);
+            txtDataVenda.Margin = new Padding(3, 4, 3, 4);
             txtDataVenda.Mask = "99/99/9999";
             txtDataVenda.MaxLength = 32767;
             txtDataVenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -346,9 +392,9 @@
             txtDataVenda.SelectionLength = 0;
             txtDataVenda.SelectionStart = 0;
             txtDataVenda.ShortcutsEnabled = true;
-            txtDataVenda.Size = new Size(177, 48);
+            txtDataVenda.Size = new Size(223, 48);
             txtDataVenda.SkipLiterals = true;
-            txtDataVenda.TabIndex = 17;
+            txtDataVenda.TabIndex = 0;
             txtDataVenda.TabStop = false;
             txtDataVenda.Text = "  /  /";
             txtDataVenda.TextAlign = HorizontalAlignment.Center;
@@ -359,30 +405,35 @@
             // 
             // CadastroVenda
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(736, 678);
+            ClientSize = new Size(730, 643);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "CadastroVenda";
+            Padding = new Padding(3, 113, 3, 5);
             Text = "Cadastro de Vendas";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewItens).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private GroupBox groupBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewItens;
         private ReaLTaiizor.Controls.MaterialComboBox cboUsuario;
         private ReaLTaiizor.Controls.MaterialComboBox cboCliente;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorTotalVenda;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataVenda;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtVlUnitario;
         private ReaLTaiizor.Controls.MaterialComboBox cboProduto;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtVlTotal;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtQuantidade;
+        private ReaLTaiizor.Controls.MaterialButton btnAdicionar;
+        private ReaLTaiizor.Controls.MaterialLabel lblValor;
+        private ReaLTaiizor.Controls.MaterialLabel lblQtdItens;
     }
 }

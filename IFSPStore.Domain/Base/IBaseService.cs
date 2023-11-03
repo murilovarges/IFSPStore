@@ -14,7 +14,7 @@ namespace IFSPStore.Domain.Base
 
         IEnumerable<TOutputModel> Get<TOutputModel>(IList<string>? includes = null) where TOutputModel : class;
 
-        TOutputModel GetById<TOutputModel>(int id) where TOutputModel : class;
+        TOutputModel GetById<TOutputModel>(int id, IList<string>? includes = null) where TOutputModel : class;
 
         TOutputModel Update<TInputModel, TOutputModel, TValidator>(TInputModel inputModel)
             where TValidator : AbstractValidator<TEntity>

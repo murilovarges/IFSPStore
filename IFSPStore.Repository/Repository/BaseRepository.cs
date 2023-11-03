@@ -54,6 +54,18 @@ namespace IFSPStore.Repository.Repository
             return dbContext.ToList();
         }
 
-        public TEntity Select(object id) => _mySqlContext.Set<TEntity>().Find(id)!;
+        //public TEntity Select(object id) => _mySqlContext.Set<TEntity>().Find(id)!;
+        public TEntity Select(object id, IList<string>? includes = null)
+        {
+            var dbContext = _mySqlContext.Set<TEntity>().AsQueryable();
+            if (includes != null)
+            {
+                foreach (var include in includes)
+                {
+                    dbContext = dbContext.Include(include);
+                }
+            }
+            return dbContext.ToList().Find(x => x.Id == (int)id)!;
+        }
     }
 }

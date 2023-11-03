@@ -12,6 +12,6 @@
 
         IList<TEntity> Select(IList<string>? includes = null);
 
-        TEntity Select(object id);
+        TEntity Select(object id, IList<string>? includes = null);
     }
 }
