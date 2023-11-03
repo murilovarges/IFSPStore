@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using IFSPStore.App.Cadastros;
 using IFSPStore.App.Models;
+using IFSPStore.App.Outros;
 using IFSPStore.Domain.Base;
 using IFSPStore.Domain.Entities;
 using IFSPStore.Repository.Context;
@@ -24,13 +25,7 @@ namespace IFSPStore.App.Infra
             Services = new ServiceCollection();
             Services.AddDbContext<MySqlContext>(options =>
             {
-                const string server = "localhost";
-                const string port = "3306";
-                const string database = "IFSPStore";
-                const string username = "root";
-                const string password = "1122";
-                const string strCon = $"Server={server};Port={port};Database={database};Uid={username};Pwd={password}";
-
+                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.EnableSensitiveDataLogging();
 
@@ -60,6 +55,7 @@ namespace IFSPStore.App.Infra
             Services.AddScoped<IBaseService<Venda>, BaseService<Venda>>();
 
             // Formulários
+            Services.AddTransient<Login, Login>();
             Services.AddTransient<CadastroUsuario, CadastroUsuario>();
             Services.AddTransient<CadastroGrupo, CadastroGrupo>();
             Services.AddTransient<CadastroProduto, CadastroProduto>();

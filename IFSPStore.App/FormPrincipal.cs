@@ -1,17 +1,38 @@
 using IFSPStore.App.Cadastros;
 using IFSPStore.App.Infra;
+using IFSPStore.App.Outros;
+using IFSPStore.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
+using System.Security.Policy;
 
 namespace IFSPStore.App
 {
     public partial class FormPrincipal : MaterialForm
     {
+
+        public static Usuario Usuario { get; set; }
         public FormPrincipal()
         {
             InitializeComponent();
+            CarregaLogin();
         }
 
+        private void CarregaLogin()
+        {
+            var login = ConfigureDI.ServicesProvider!.GetService<Login>();
+            if (login != null && !login.IsDisposed)
+            {
+                if (login.ShowDialog() != DialogResult.OK)
+                {
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    lblUsuario.Text = $"Usuário: {Usuario.Nome}";
+                }
+            }
+        }
 
         private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -49,6 +70,11 @@ namespace IFSPStore.App
         private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exibeformulario<CadastroVenda>();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form
