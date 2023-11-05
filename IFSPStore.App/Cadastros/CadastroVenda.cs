@@ -31,6 +31,7 @@ namespace IFSPStore.App.Cadastros
             InitializeComponent();
             CarregarCombo();
             CarregaGridItensVenda();
+            Novo();
         }
 
         private void CarregarCombo()
@@ -82,6 +83,14 @@ namespace IFSPStore.App.Cadastros
                 venda.Items.Add(itemVenda);
             }
             
+        }
+
+        protected override void Novo()
+        {
+            base.Novo();
+            _vendaItems.Clear();
+            CarregaGridItensVenda();
+            txtDataVenda.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         protected override void Salvar()
@@ -146,11 +155,11 @@ namespace IFSPStore.App.Cadastros
                ? dataC.ToString("g")
                : "";
             
-            var includes = new List<string>() { "Cliente", "Usuario"};
+            var includes = new List<string>() {"Cliente", "Usuario", "Items", "Items.Produto" };
             var venda = _vendaService.GetById<Venda>(id, includes);
             _vendaItems = new List<VendaItemModel>();
             foreach(var item in venda.Items)
-            {
+            {                
                 var vendaItem = new VendaItemModel
                 {
                     Id = item.Id,

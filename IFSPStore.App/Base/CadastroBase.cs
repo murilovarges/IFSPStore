@@ -36,9 +36,7 @@ namespace IFSPStore.App.Base
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            LimpaCampos();
-            materialTabControl.SelectedIndex = 0;
-            tabPageCadastro.Focus();
+            Novo();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -101,6 +99,12 @@ namespace IFSPStore.App.Base
 
         }
 
+        protected virtual void Novo()
+        {
+            LimpaCampos();
+            materialTabControl.SelectedIndex = 0;
+            tabPageCadastro.Focus();
+        }
         protected virtual void Salvar()
         {
 
