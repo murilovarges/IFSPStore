@@ -49,9 +49,9 @@
             // 
             // materialTabControl
             // 
-            materialTabControl.Location = new Point(3, 113);
-            materialTabControl.Margin = new Padding(3, 5, 3, 5);
-            materialTabControl.Size = new Size(724, 525);
+            materialTabControl.Location = new Point(3, 85);
+            materialTabControl.Margin = new Padding(3, 4, 3, 4);
+            materialTabControl.Size = new Size(638, 457);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
@@ -61,9 +61,10 @@
             tabPageCadastro.Controls.Add(cboCliente);
             tabPageCadastro.Controls.Add(groupBox1);
             tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Size = new Size(716, 490);
+            tabPageCadastro.Location = new Point(4, 31);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(630, 422);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(groupBox1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCliente, 0);
@@ -72,9 +73,10 @@
             // 
             // tabPageConsulta
             // 
-            tabPageConsulta.Margin = new Padding(3, 5, 3, 5);
-            tabPageConsulta.Padding = new Padding(3, 5, 3, 5);
-            tabPageConsulta.Size = new Size(619, 567);
+            tabPageConsulta.Location = new Point(4, 31);
+            tabPageConsulta.Margin = new Padding(3, 4, 3, 4);
+            tabPageConsulta.Padding = new Padding(3, 4, 3, 4);
+            tabPageConsulta.Size = new Size(472, 303);
             // 
             // txtId
             // 
@@ -88,8 +90,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(576, 8);
-            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Location = new Point(504, 6);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -101,7 +102,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(122, 48);
+            txtId.Size = new Size(107, 48);
             txtId.TabIndex = 2;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -118,11 +119,9 @@
             groupBox1.Controls.Add(txtVlUnitario);
             groupBox1.Controls.Add(cboProduto);
             groupBox1.Controls.Add(dataGridViewItens);
-            groupBox1.Location = new Point(7, 115);
-            groupBox1.Margin = new Padding(3, 4, 3, 4);
+            groupBox1.Location = new Point(6, 116);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 4, 3, 4);
-            groupBox1.Size = new Size(695, 317);
+            groupBox1.Size = new Size(608, 251);
             groupBox1.TabIndex = 4;
             groupBox1.TabStop = false;
             groupBox1.Text = "Produtos da Venda";
@@ -133,7 +132,7 @@
             lblValor.Depth = 0;
             lblValor.FlatStyle = FlatStyle.Flat;
             lblValor.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblValor.Location = new Point(499, 291);
+            lblValor.Location = new Point(444, 229);
             lblValor.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblValor.Name = "lblValor";
             lblValor.Size = new Size(96, 19);
@@ -145,7 +144,7 @@
             lblQtdItens.AutoSize = true;
             lblQtdItens.Depth = 0;
             lblQtdItens.Font = new Font("Roboto", 14F, FontStyle.Regular, GraphicsUnit.Pixel);
-            lblQtdItens.Location = new Point(6, 291);
+            lblQtdItens.Location = new Point(5, 226);
             lblQtdItens.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             lblQtdItens.Name = "lblQtdItens";
             lblQtdItens.Size = new Size(115, 19);
@@ -160,8 +159,8 @@
             btnAdicionar.HighEmphasis = true;
             btnAdicionar.Icon = null;
             btnAdicionar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnAdicionar.Location = new Point(614, 33);
-            btnAdicionar.Margin = new Padding(5, 8, 5, 8);
+            btnAdicionar.Location = new Point(537, 25);
+            btnAdicionar.Margin = new Padding(4, 6, 4, 6);
             btnAdicionar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.NoAccentTextColor = Color.Empty;
@@ -185,8 +184,7 @@
             txtVlTotal.HideSelection = true;
             txtVlTotal.Hint = "Vl.Total";
             txtVlTotal.LeadingIcon = null;
-            txtVlTotal.Location = new Point(465, 29);
-            txtVlTotal.Margin = new Padding(3, 4, 3, 4);
+            txtVlTotal.Location = new Point(407, 22);
             txtVlTotal.MaxLength = 32767;
             txtVlTotal.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtVlTotal.Name = "txtVlTotal";
@@ -198,7 +196,7 @@
             txtVlTotal.SelectionLength = 0;
             txtVlTotal.SelectionStart = 0;
             txtVlTotal.ShortcutsEnabled = true;
-            txtVlTotal.Size = new Size(130, 48);
+            txtVlTotal.Size = new Size(114, 48);
             txtVlTotal.TabIndex = 3;
             txtVlTotal.TabStop = false;
             txtVlTotal.TextAlign = HorizontalAlignment.Left;
@@ -217,8 +215,7 @@
             txtQuantidade.HideSelection = true;
             txtQuantidade.Hint = "Qtd";
             txtQuantidade.LeadingIcon = null;
-            txtQuantidade.Location = new Point(371, 29);
-            txtQuantidade.Margin = new Padding(3, 4, 3, 4);
+            txtQuantidade.Location = new Point(325, 22);
             txtQuantidade.MaxLength = 32767;
             txtQuantidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtQuantidade.Name = "txtQuantidade";
@@ -230,7 +227,7 @@
             txtQuantidade.SelectionLength = 0;
             txtQuantidade.SelectionStart = 0;
             txtQuantidade.ShortcutsEnabled = true;
-            txtQuantidade.Size = new Size(87, 48);
+            txtQuantidade.Size = new Size(76, 48);
             txtQuantidade.TabIndex = 2;
             txtQuantidade.TabStop = false;
             txtQuantidade.TextAlign = HorizontalAlignment.Left;
@@ -250,8 +247,7 @@
             txtVlUnitario.HideSelection = true;
             txtVlUnitario.Hint = "Vl.Unit.";
             txtVlUnitario.LeadingIcon = null;
-            txtVlUnitario.Location = new Point(262, 29);
-            txtVlUnitario.Margin = new Padding(3, 4, 3, 4);
+            txtVlUnitario.Location = new Point(229, 22);
             txtVlUnitario.MaxLength = 32767;
             txtVlUnitario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtVlUnitario.Name = "txtVlUnitario";
@@ -263,7 +259,7 @@
             txtVlUnitario.SelectionLength = 0;
             txtVlUnitario.SelectionStart = 0;
             txtVlUnitario.ShortcutsEnabled = true;
-            txtVlUnitario.Size = new Size(103, 48);
+            txtVlUnitario.Size = new Size(90, 48);
             txtVlUnitario.TabIndex = 1;
             txtVlUnitario.TabStop = false;
             txtVlUnitario.TextAlign = HorizontalAlignment.Left;
@@ -286,12 +282,11 @@
             cboProduto.Hint = "Produto";
             cboProduto.IntegralHeight = false;
             cboProduto.ItemHeight = 43;
-            cboProduto.Location = new Point(3, 28);
-            cboProduto.Margin = new Padding(3, 4, 3, 4);
+            cboProduto.Location = new Point(3, 21);
             cboProduto.MaxDropDownItems = 4;
             cboProduto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboProduto.Name = "cboProduto";
-            cboProduto.Size = new Size(251, 49);
+            cboProduto.Size = new Size(220, 49);
             cboProduto.StartIndex = 0;
             cboProduto.TabIndex = 0;
             // 
@@ -301,14 +296,13 @@
             dataGridViewItens.AllowUserToDeleteRows = false;
             dataGridViewItens.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewItens.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewItens.Location = new Point(3, 85);
-            dataGridViewItens.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewItens.Location = new Point(3, 76);
             dataGridViewItens.MultiSelect = false;
             dataGridViewItens.Name = "dataGridViewItens";
             dataGridViewItens.ReadOnly = true;
             dataGridViewItens.RowHeadersWidth = 51;
             dataGridViewItens.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewItens.Size = new Size(689, 199);
+            dataGridViewItens.Size = new Size(603, 150);
             dataGridViewItens.TabIndex = 5;
             // 
             // cboCliente
@@ -326,12 +320,11 @@
             cboCliente.Hint = "Cliente";
             cboCliente.IntegralHeight = false;
             cboCliente.ItemHeight = 43;
-            cboCliente.Location = new Point(10, 64);
-            cboCliente.Margin = new Padding(3, 4, 3, 4);
+            cboCliente.Location = new Point(9, 61);
             cboCliente.MaxDropDownItems = 4;
             cboCliente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboCliente.Name = "cboCliente";
-            cboCliente.Size = new Size(688, 49);
+            cboCliente.Size = new Size(602, 49);
             cboCliente.StartIndex = 0;
             cboCliente.TabIndex = 3;
             // 
@@ -350,12 +343,11 @@
             cboUsuario.Hint = "Usuário/Vendedor";
             cboUsuario.IntegralHeight = false;
             cboUsuario.ItemHeight = 43;
-            cboUsuario.Location = new Point(240, 7);
-            cboUsuario.Margin = new Padding(3, 4, 3, 4);
+            cboUsuario.Location = new Point(210, 5);
             cboUsuario.MaxDropDownItems = 4;
             cboUsuario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboUsuario.Name = "cboUsuario";
-            cboUsuario.Size = new Size(329, 49);
+            cboUsuario.Size = new Size(288, 49);
             cboUsuario.StartIndex = 0;
             cboUsuario.TabIndex = 1;
             // 
@@ -374,8 +366,7 @@
             txtDataVenda.Hint = "Data Venda";
             txtDataVenda.InsertKeyMode = InsertKeyMode.Default;
             txtDataVenda.LeadingIcon = null;
-            txtDataVenda.Location = new Point(10, 9);
-            txtDataVenda.Margin = new Padding(3, 4, 3, 4);
+            txtDataVenda.Location = new Point(9, 7);
             txtDataVenda.Mask = "99/99/9999";
             txtDataVenda.MaxLength = 32767;
             txtDataVenda.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -392,7 +383,7 @@
             txtDataVenda.SelectionLength = 0;
             txtDataVenda.SelectionStart = 0;
             txtDataVenda.ShortcutsEnabled = true;
-            txtDataVenda.Size = new Size(223, 48);
+            txtDataVenda.Size = new Size(195, 48);
             txtDataVenda.SkipLiterals = true;
             txtDataVenda.TabIndex = 0;
             txtDataVenda.TabStop = false;
@@ -405,13 +396,13 @@
             // 
             // CadastroVenda
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 643);
+            ClientSize = new Size(644, 546);
             Location = new Point(0, 0);
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroVenda";
-            Padding = new Padding(3, 113, 3, 5);
+            Padding = new Padding(3, 85, 3, 4);
             Text = "Cadastro de Vendas";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);

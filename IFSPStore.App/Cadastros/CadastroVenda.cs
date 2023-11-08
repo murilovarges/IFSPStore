@@ -65,11 +65,11 @@ namespace IFSPStore.App.Cadastros
             if (int.TryParse(cboCliente.SelectedValue.ToString(), out var idCliente))
             {
                 var cliente = _clienteService.GetById<Cliente>(idCliente);
-                venda.Cliente = cliente;                
+                venda.Cliente = cliente;
             }
             venda.ValorTotal = _vendaItems.Sum(x => x.ValorTotal);
 
-            foreach( var item in _vendaItems)
+            foreach (var item in _vendaItems)
             {
                 var itemVenda = new VendaItem
                 {
@@ -82,7 +82,7 @@ namespace IFSPStore.App.Cadastros
 
                 venda.Items.Add(itemVenda);
             }
-            
+
         }
 
         protected override void Novo()
@@ -154,12 +154,12 @@ namespace IFSPStore.App.Cadastros
             txtDataVenda.Text = DateTime.TryParse(linha?.Cells["Data"].Value.ToString(), out var dataC)
                ? dataC.ToString("g")
                : "";
-            
-            var includes = new List<string>() {"Cliente", "Usuario", "Items", "Items.Produto" };
+
+            var includes = new List<string>() { "Cliente", "Usuario", "Items", "Items.Produto" };
             var venda = _vendaService.GetById<Venda>(id, includes);
             _vendaItems = new List<VendaItemModel>();
-            foreach(var item in venda.Items)
-            {                
+            foreach (var item in venda.Items)
+            {
                 var vendaItem = new VendaItemModel
                 {
                     Id = item.Id,
@@ -172,7 +172,7 @@ namespace IFSPStore.App.Cadastros
                 _vendaItems.Add(vendaItem);
             }
             CarregaGridItensVenda();
-            
+
         }
 
         private void CarregaGridItensVenda()
