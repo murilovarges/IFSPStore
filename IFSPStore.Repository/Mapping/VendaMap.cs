@@ -20,7 +20,9 @@ namespace IFSPStore.Repository.Mapping
 
             builder.HasOne(prop => prop.Cliente);
 
-            builder.HasMany(prop => prop.Items);
+            builder.HasMany(prop => prop.Items)
+                .WithOne(prop => prop.Venda)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }
@@ -42,7 +44,9 @@ namespace IFSPStore.Repository.Mapping
             builder.Property(prop => prop.ValorTotal)
                 .IsRequired();
 
-            builder.HasOne(prop => prop.Venda);
+            builder.HasOne(prop => prop.Venda)
+                .WithMany(prop => prop.Items)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

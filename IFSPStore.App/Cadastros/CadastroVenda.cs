@@ -178,19 +178,15 @@ namespace IFSPStore.App.Cadastros
         private void CarregaGridItensVenda()
         {
             var source = new BindingSource();
-            if (_vendaItems == null)
-            {
-                _vendaItems = new List<VendaItemModel>();
-            }
             source.DataSource = _vendaItems.ToArray();
             dataGridViewItens.DataSource = source;
-            dataGridViewItens.Columns["Id"].Visible = false;
-            dataGridViewItens.Columns["IdProduto"].HeaderText = "Id.Produto";
-            dataGridViewItens.Columns["ValorUnitario"].DefaultCellStyle.Format = "C2";
-            dataGridViewItens.Columns["ValorUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewItens.Columns["ValorTotal"].DefaultCellStyle.Format = "C2";
-            dataGridViewItens.Columns["ValorTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dataGridViewItens.Columns["Quantidade"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewItens.Columns["Id"]!.Visible = false;
+            dataGridViewItens.Columns["IdProduto"]!.HeaderText = @"Id.Produto";
+            dataGridViewItens.Columns["ValorUnitario"]!.DefaultCellStyle.Format = "C2";
+            dataGridViewItens.Columns["ValorUnitario"]!.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewItens.Columns["ValorTotal"]!.DefaultCellStyle.Format = "C2";
+            dataGridViewItens.Columns["ValorTotal"]!.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dataGridViewItens.Columns["Quantidade"]!.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -230,7 +226,7 @@ namespace IFSPStore.App.Cadastros
         private void txtVlUnitario_Leave(object sender, EventArgs e)
         {
             if (double.TryParse(txtVlUnitario.Text, out double value))
-                txtVlUnitario.Text = string.Format(CultureInfo.CurrentCulture, "{0:C2}", value);
+                txtVlUnitario.Text = string.Format(CultureInfo.CurrentCulture, @"{0:C2}", value);
             else
                 txtVlUnitario.Text = string.Empty;
 
@@ -250,8 +246,8 @@ namespace IFSPStore.App.Cadastros
 
         private void CalculaTotalVenda()
         {
-            lblValor.Text = $"Valor Total: {string.Format(CultureInfo.CurrentCulture, "{0:C2}", _vendaItems.Sum(x => x.ValorTotal))}";
-            lblQtdItens.Text = $"Qtd. Produtos: {_vendaItems.Sum(x => x.Quantidade)}";
+            lblValor.Text = $@"Valor Total: {string.Format(CultureInfo.CurrentCulture, "{0:C2}", _vendaItems.Sum(x => x.ValorTotal))}";
+            lblQtdItens.Text = $@"Qtd. Produtos: {_vendaItems.Sum(x => x.Quantidade)}";
         }
 
         private void txtQuantidade_Leave(object sender, EventArgs e)

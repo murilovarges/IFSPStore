@@ -28,7 +28,7 @@ namespace IFSPStore.Service.Services
             var entity = _mapper.Map<TEntity>(inputModel);
 
             Validate(entity, Activator.CreateInstance<TValidator>());
-            
+
             _baseRepository.Insert(entity);
 
             var outputModel = _mapper.Map<TOutputModel>(entity);
@@ -36,7 +36,11 @@ namespace IFSPStore.Service.Services
             return outputModel;
         }
 
-        public void Delete(int id) => _baseRepository.Delete(id);
+        public void Delete(int id)
+        {
+            _baseRepository.ClearChangeTracker();
+            _baseRepository.Delete(id);
+        }
 
         public IEnumerable<TOutputModel> Get<TOutputModel>(IList<string>? includes = null) where TOutputModel : class
         {

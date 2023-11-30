@@ -21,9 +21,9 @@ namespace IFSPStore.Domain.Entities
 
         public DateTime Data { get; set; }
         public float ValorTotal { get; set; }
-        public Usuario? Usuario { get; set; }
-        public Cliente? Cliente { get; set; }
-        public List<VendaItem> Items { get; set; }
+        public virtual Usuario? Usuario { get; set; }
+        public virtual Cliente? Cliente { get; set; }
+        public virtual List<VendaItem> Items { get; set; }
     }
 
     public class VendaItem : BaseEntity<int>
@@ -42,11 +42,11 @@ namespace IFSPStore.Domain.Entities
             Venda = venda;
         }
 
-        public Produto? Produto { get; set; }
+        public virtual Produto? Produto { get; set; }
         public int Quantidade { get; set; }
         public float ValorUnitario { get; set; }    
         public float ValorTotal { get; set; }
         [JsonIgnore]
-        public Venda? Venda { get; set; }
+        public virtual Venda? Venda { get; set; }
     }
 }

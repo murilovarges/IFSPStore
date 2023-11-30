@@ -9,6 +9,7 @@ using IFSPStore.Repository.Repository;
 using IFSPStore.Service.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 
 namespace IFSPStore.App.Infra
@@ -22,18 +23,19 @@ namespace IFSPStore.App.Infra
         public static void ConfiguraServices()
         {
             Services = new ServiceCollection();
+            var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
-                options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
-                options.EnableSensitiveDataLogging();
+                options.LogTo(Console.WriteLine)
+                    .EnableSensitiveDataLogging();
+                //options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+                //options.EnableSensitiveDataLogging();
 
 
                 options.UseMySql(strCon, ServerVersion.AutoDetect(strCon), opt =>
                 {
                     opt.CommandTimeout(180);
                     opt.EnableRetryOnFailure(5);
-
                 });
             });
 

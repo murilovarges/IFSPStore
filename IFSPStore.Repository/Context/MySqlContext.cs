@@ -11,6 +11,7 @@ namespace IFSPStore.Repository.Context
         {
             Database.EnsureCreated();
             ChangeTracker.LazyLoadingEnabled = false;
+            
         }
 
         public DbSet<Usuario>? Usuario { get; set; }
